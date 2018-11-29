@@ -7,6 +7,7 @@ import { Data } from "./Data";
 const { InfoBox } = require("react-google-maps/lib/components/addons/InfoBox");
 
 //Using https://github.com/tomchentw/react-google-maps library for Google Map Integration
+//Using https://github.com/negomi/react-burger-menu library for Menu
 const MyMapComponent = compose(
 	withProps({
 		googleMapURL:"https://maps.googleapis.com/maps/api/js?key=AIzaSyA14L7qSnS_IFi6pzCPWp4Hum1RhBBNMpM",
@@ -19,7 +20,6 @@ const MyMapComponent = compose(
 )((props) =>
 	<GoogleMap defaultZoom={13} defaultCenter={props.center}
 		>
-		//Creates Markers and sets Info-Window
 		{props.positions.map(position =>
 		<Marker key={position.id }position={position} onClick={() => props.onMarkerClick(position.id)} animation= {position.animation} >
 			{position.isInfoBoxShown &&
@@ -128,7 +128,6 @@ class App extends Component {
 					</header>
 				</div>
 
-				//Using https://github.com/negomi/react-burger-menu library for Menu
 				<Menu isOpen={ true } pageWrapId={ "page-wrap" } outerContainerId={ "outer-container" } right noOverlay aria-label="List of Locations">
 					<div id="filter" aria-label="Filter Section">
 						<input
