@@ -23,3 +23,9 @@ yarn-debug.log*
 yarn-error.log*
 
 package-lock.json
+
+src/a[0-9]
+src/a
+src/Sidebar.js
+src/App.test.js
+src/index.css
